@@ -1,18 +1,16 @@
-# Dockerfile – ĐÃ TEST HOẠT ĐỘNG 100% TRÊN RENDER.COM
 FROM tomcat:10.1-jdk17-temurin
 
-# Xóa hết app mặc định của Tomcat
+# Xóa app mặc định
 RUN rm -rf /usr/local/tomcat/webapps/*
 
-# Copy file WAR của bạn (tên file là Cartapi.war)
-COPY target/Cartapi.war /usr/local/tomcat/webapps/ROOT.war
+# Copy WAR (đổi tên thành ROOT.war để truy cập trực tiếp https://your-api.onrender.com/api/...)
+COPY target/ROOT.war /usr/local/tomcat/webapps/ROOT.war
 
-# Tạo thư mục log để tránh lỗi permission (Render yêu cầu)
-RUN mkdir -p /usr/local/tomcat/logs && \
-    chmod 777 /usr/local/tomcat/logs
+# Tạo thư mục logs (Render đôi khi cần)
+RUN mkdir -p /usr/local/tomcat/logs && chmod 777 /usr/local/tomcat/logs
 
-# Expose port
+# QUAN TRỌNG NHẤT: Fix cookie JSESSIONID cho Render + localhost HTTPS
+COPY context.xml /usr/local/tomcat/conf/context.xml
+
 EXPOSE 8080
-
-# Chạy Tomcat ở foreground (bắt buộc cho Docker)
 CMD ["catalina.sh", "run"]

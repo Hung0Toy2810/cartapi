@@ -17,15 +17,12 @@
     </properties>
 
     <dependencies>
-        <!-- Jakarta EE 9+ → Tomcat 10+ -->
         <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
             <version>6.0.0</version>
             <scope>provided</scope>
         </dependency>
-
-        <!-- Gson -->
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
@@ -34,16 +31,8 @@
     </dependencies>
 
     <build>
-        <finalName>Cartapi</finalName>
+        <finalName>ROOT</finalName>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version>
-                <configuration>
-                    <release>17</release>
-                </configuration>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>

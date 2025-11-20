@@ -1,7 +1,10 @@
+<!-- context.xml -->
 <?xml version="1.0" encoding="UTF-8"?>
 <Context>
-    <!-- Fix cookie JSESSIONID cho HTTPS + cross-site (localhost → Render) -->
+    <!-- Bắt buộc để cookie hoạt động cross-site + HTTPS (Render + localhost) -->
     <CookieProcessor sameSiteCookies="none" />
+    
+    <!-- Tomcat 10.1+ dùng thuộc tính này để bật Secure + SameSite=None -->
     <SessionCookieConfig>
         <secure>true</secure>
         <sameSiteCookies>none</sameSiteCookies>
