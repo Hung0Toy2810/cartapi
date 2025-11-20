@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context>
-    <!-- Fix cookie JSESSIONID cho HTTPS + cross-site (localhost → Render) -->
+    <!-- Fix cookie cho cross-site + HTTPS (Render + localhost) -->
     <CookieProcessor sameSiteCookies="none" />
-    <SessionCookieConfig>
-        <secure>true</secure>
-        <sameSiteCookies>none</sameSiteCookies>
-    </SessionCookieConfig>
 </Context>
