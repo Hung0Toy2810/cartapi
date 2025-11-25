@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context>
-    <!-- FIX 100% LỖI GIỎ HÀNG TRỐNG KHI DÙNG VERCEL + RENDER -->
     <SessionCookieConfig>
         <secure>true</secure>
         <sameSite>None</sameSite>
