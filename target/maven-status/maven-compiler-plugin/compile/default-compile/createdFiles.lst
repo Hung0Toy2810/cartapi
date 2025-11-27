@@ -1,6 +1,1 @@
-com/controllers/JwtUtil.class
-com/controllers/ApiResponse.class
-com/controllers/CorsFilter.class
-com/controllers/User.class
-com/controllers/ApiServlet.class
-com/controllers/InMemoryStore.class
+com/controllers/SqlGatewayServlet.class
